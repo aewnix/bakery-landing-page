@@ -1,0 +1,57 @@
+/*======== FONTS ========*/
+@import url('https://fonts.googleapis.com/css2?family=Kalnia:wght@100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+
+/* ======== VARIABLES ========*/
+:root {
+    --body-background: #F5F5DC; /* Warm Beige / Cream */
+    --body-text-color: #3E2723; /* Dark Chocolate */
+    --body-font: "Montserrat", sans-serif;
+    --heading-color: #8B4513; /* Warm Brown */
+    --header-font: "Dancing Script", cursive;
+    --button-background: #FFD1DC; /* Soft Pastel Pink */
+    --button-text-color: #ADD8E6; /* Soft Pastel Blue */
+    --button-hover-background: #ADD8E6; /* Soft Pastel Blue */
+    --button-hover-text-color: #FFD1DC; /* Soft Pastel Pink */
+}
+
+/* ======== BASE ========*/
+
+
+*, *::after, *::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--body-background);
+    color: var(--body-text-color);
+    font-family: var(--body-font);
+}
+
+h1, h2, h3 {
+    color: var(--heading-color);
+    font-family: var(--header-font);
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--body-text-color);
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
