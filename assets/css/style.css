@@ -1,57 +1,165 @@
-/*======== FONTS ========*/
-@import url('https://fonts.googleapis.com/css2?family=Kalnia:wght@100..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+/* FONTS  */
+@import url("https://fonts.googleapis.com/css2?family=Kalnia:wght@100..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap");
 
-/* ======== VARIABLES ========*/
+/* VARIABLES */
+
 :root {
-    --body-background: #F5F5DC; /* Warm Beige / Cream */
-    --body-text-color: #3E2723; /* Dark Chocolate */
-    --body-font: "Montserrat", sans-serif;
-    --heading-color: #8B4513; /* Warm Brown */
-    --header-font: "Dancing Script", cursive;
-    --button-background: #FFD1DC; /* Soft Pastel Pink */
-    --button-text-color: #ADD8E6; /* Soft Pastel Blue */
-    --button-hover-background: #ADD8E6; /* Soft Pastel Blue */
-    --button-hover-text-color: #FFD1DC; /* Soft Pastel Pink */
+  --body-background-color: #f1e7dd;
+  --secondary-color: hsla(29, 42%, 86%, 1);
+  --accent-color: rgb(112, 62, 62);
+
+  --primary-text-color: #4d3b3b;
+  --secondary-text-color: #7a5e5e; 
+  --accent-text-color: #6e3d3d;
+  --light-text-color: #f5e9e0;
+
+  --ff-body: "Montserrat", sans-serif;
+  --ff-logo: "Kalnia", serif;
+
+  --fs-xl: 5rem;
+  --fs-700: 1.75rem;
+  --fs-600: 1.5rem;
+  --fs-500: 1.25rem;
+  --fs-400: 1rem;
+
+  --nav-padding: 6rem 3rem;
 }
 
-/* ======== BASE ========*/
+@media (min-width: 640px) {
+  :root {
+    --fs-xl: 7rem;
+    --fs-600: 1.75rem;
+    --fs-400: 1.125rem;
 
-
-*, *::after, *::before {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+    --nav-padding: unset;
+  }
 }
 
+/* BASE CSS */
 
-html {
-    scroll-behavior: smooth;
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    background: var(--body-background);
-    color: var(--body-text-color);
-    font-family: var(--body-font);
+  font-family: var(--ff-body);
+  font-size: var(--fs-400);
+  background-color: var(--body-background-color);
+  color: var(--primary-text-color);
 }
-
-h1, h2, h3 {
-    color: var(--heading-color);
-    font-family: var(--header-font);
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 ul {
-    list-style: none;
+  list-style: none;
 }
 
-a {
-    text-decoration: none;
-    color: var(--body-text-color);
+.container {
+  max-width: 1120px;
+  margin-inline: auto;
 }
 
-img {
+/* HEADER AND NAV  */
+
+header {
+  position: fixed;
+  inset: 2rem 0;
+  height: max-content;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.5rem;
+  z-index: 100;
+}
+
+.nav-logo {
+  font-family: var(--ff-logo);
+  font-size: var(--fs-600);
+  color: var(--accent-color);
+}
+
+.nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  white-space: nowrap;
+}
+
+.nav-item:hover {
+    color: var(--secondary-text-color);
+}
+
+.nav-item::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  transition: width 1s;
+}
+
+.nav-item:hover::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: var(--secondary-text-color);
+}
+
+nav {
+  background-color: var(--secondary-color);
+  position: fixed;
+  inset: 0 0 0 100%;
+  padding: var(--nav-padding);
+  color: var(--ff-body);
+  font-weight: 600;
+  z-index: 99;
+  transition: inset .8s;
+}
+
+nav.open {
+    inset: 0 0 0 50%;
+}
+
+nav::before {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  border: 1px solid var(--body-background-color);
+}
+
+.nav-toggle {
     display: block;
-    width: 100%;
-    height: auto;
+    z-index: 100;
+    font-size: var(--fs-700);
+  }
+
+@media (min-width: 640px) {
+  .nav-list {
+    flex-direction: row;
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+
+  nav::before {
+    display: none;
+  }
+
+  nav {
+    position: static;
+    background-color: transparent;
+  }
+}
+
+main {
+    overflow: hidden;
+    padding-top: 5rem;
 }
