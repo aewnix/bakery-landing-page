@@ -7,7 +7,7 @@
 
 :root {
   --body-background-color: #f1e7dd;
-  --secondary-color: hsla(29, 42%, 86%, 1);
+  --secondary-color: rgb(223, 205, 186);
   --accent-color: rgb(112, 62, 62);
 
   --primary-text-color: #4d3b3b;
@@ -28,6 +28,7 @@
   --fs-xs: 0.9rem;
 
   --nav-padding: 6rem 3rem;
+  --content-width: 90%;
 }
 
 @media (min-width: 640px) {
@@ -73,6 +74,18 @@ ul {
 main {
   overflow: hidden;
   padding-top: 5rem;
+}
+
+.content {
+  max-width: var(--content-width);
+  margin-inline: auto;
+}
+
+h1 {
+  font-size: var(--fs-xl);
+  margin: 2rem;
+  text-align: center;
+  font-family: var(--ff-logo);
 }
 
 .mobile-hidden {
