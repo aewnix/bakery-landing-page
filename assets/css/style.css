@@ -98,6 +98,10 @@ h1 {
   display: none;
 }
 
+.flex {
+  display: flex;
+}
+
 .animated-underline::after {
   content: "";
   display: block;
@@ -301,7 +305,7 @@ section#about-us img{
   section#about-us h1 {
     margin-bottom: 0;
   }
-  
+
   section#about-us .content {
     display: flex;
     gap: 1rem ;
